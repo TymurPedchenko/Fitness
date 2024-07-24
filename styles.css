@@ -1,0 +1,356 @@
+:root {
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-dark-alternate: #131619;
+  --color-light-gray: #c4c4c4;
+  --color-dark-gray: #404040;
+
+  --border-radius: 30px;
+  --border: 1px solid var(--color-light);
+
+  --font-family-base: "Heebo", sans-serif;
+  --font-family-accent: "Yantramanav", sans-serif;
+
+  --input-height: 54px;
+
+  --container-width: 1300px;
+  --container-padding-x: 15px;
+
+  --transition-duration: 200ms;
+
+  --header-height: 90px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-light-gray);
+  background-color: var(--color-dark);
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+/* adding a transition to all interactive elements */
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: var(--color-light);
+}
+
+a:is(:hover, :focus) {
+  color: var(--color-light-gray);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+
+  white-space: nowrap;
+  height: 38px;
+  padding-inline: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background-color: var(--color-light);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--color-light-gray);
+}
+
+@media screen and (min-width: 480px) {
+  .button {
+    padding-inline: 26px;
+  }
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  background-color: var(--color-dark-alternate);
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 15px;
+  padding-top: 10px;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+.header-logo {
+  flex-shrink: 0;
+}
+
+.header-nav {
+  order: 1;
+  flex-basis: 100%;
+}
+
+.header-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 22px;
+}
+
+.header-nav-link {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+
+  height: 32px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header-nav-link.is-current::after {
+  content: "";
+
+  width: 5px;
+  aspect-ratio: 1;
+
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+.header-actions {
+  display: flex;
+  column-gap: 15px;
+}
+
+.header-burger-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8px;
+  row-gap: 4px;
+
+  width: 40px;
+  aspect-ratio: 1;
+  color: var(--color-light);
+
+  background-color: transparent;
+  border: var(--border);
+  border-radius: 50%;
+}
+
+.header-burger-button-line {
+  display: flex;
+
+  width: 5px;
+  height: 1px;
+
+  background-color: currentColor;
+  box-shadow: 16px 0 0 currentColor;
+}
+
+@media screen and (min-width: 480px) {
+  .header-actions {
+    column-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding-top: 25px;
+  }
+
+  .header-nav-list {
+    column-gap: 50px;
+  }
+
+  .header-nav-link {
+    height: 50px;
+  }
+
+  .header-actions {
+    column-gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-container {
+    flex-wrap: nowrap;
+    padding-inline: 32px;
+    padding-top: 0;
+
+    min-height: var(--header-height);
+  }
+
+  .header-nav {
+    order: 0;
+    flex-basis: content;
+  }
+
+  .header-nav-link {
+    height: var(--header-height);
+  }
+}
+
+/* ---------- /HEADER ---------- */
+
+/* ---------- BANNER ---------- */
+
+.banner {
+  background-color: var(--color-dark-alternate);
+}
+
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-block: 36px;
+  padding-inline: 15px;
+  row-gap: 10px;
+
+  min-height: calc(100vh - var(--header-height));
+  color: var(--color-light);
+}
+
+.banner-body {
+  text-transform: uppercase;
+}
+
+/* flex is there for the pseudo element, because of element's inline-display */
+.banner-info {
+  display: flex;
+  align-items: flex-end;
+
+  font-weight: 700;
+  font-size: clamp(16px, 1.56vw, 30px);
+  line-height: 1.27;
+}
+
+.banner-info::before {
+  content: "";
+  margin-right: 10px;
+  margin-bottom: 5px;
+
+  width: clamp(60px, 10.1vw, 194px);
+  aspect-ratio: 1;
+
+  background-image: url(./icons/bold-arrow-down-right.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.banner-title {
+  font-size: min(18.75vw, 360px);
+  line-height: 1;
+}
+
+.banner-pagination-list {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-pagination-item {
+  display: flex;
+}
+
+.banner-pagination-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+
+  background-color: transparent;
+  border: none;
+}
+
+.banner-pagination-button::after {
+  content: "";
+
+  width: 10px;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  border: var(--border);
+  transition-duration: var(--transition-duration);
+}
+
+.banner-pagination-button.is-current::after {
+  content: "";
+
+  background-color: var(--color-light);
+}
+
+.banner-pagination-button:not(.is-current):hover::after {
+  border-color: var(--color-light-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .banner-info::before {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .banner-container {
+    padding: 36px 70px;
+    row-gap: 0;
+  }
+}
+
+/* ---------- /BANNER ---------- */

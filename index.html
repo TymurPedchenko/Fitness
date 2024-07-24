@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Yantramanav:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="" class="header-logo">
+          <img
+            src="./images/header-logo.png"
+            alt="Logo image"
+            class="header-logo-image"
+            width="135"
+            height="25"
+            loading="lazy"
+          />
+        </a>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a href="" class="header-nav-link is-current">Home</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="" class="header-nav-link">Pages</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="" class="header-nav-link">Portfolio</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="" class="header-nav-link">Blog</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="" class="header-nav-link">Shop</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="header-book-button button">
+            Book now
+          </button>
+          <button type="button" class="header-burger-button" title="Open menu">
+            <span class="visually-hidden">Open menu</span>
+            <span class="header-burger-button-line"></span>
+            <span class="header-burger-button-line"></span>
+            <span class="header-burger-button-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+      <h1 class="visually-hidden">Kropp Fitness Club</h1>
+
+      <!-- Banner -->
+      <section class="banner">
+        <div class="banner-container">
+          <h2 class="visually-hidden">Upcoming events</h2>
+          <div class="banner-body">
+            <div class="banner-info">
+              New event <br />
+              coming up /&nbsp;<time datetime="06-07">june 7</time
+              >&nbsp;-&nbsp;<time datetime="06-13">13</time>
+            </div>
+            <h3 class="banner-title">Crossfit</h3>
+          </div>
+          <div class="banner-pagination">
+            <ul class="banner-pagination-list">
+              <li class="banner-pagination-item">
+                <button type="button" class="banner-pagination-button"></button>
+              </li>
+              <li class="banner-pagination-item">
+                <button type="button" class="banner-pagination-button"></button>
+              </li>
+              <li class="banner-pagination-item">
+                <button
+                  type="button"
+                  class="banner-pagination-button is-current"
+                ></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- /Banner -->
+    </main>
+  </body>
+</html>
